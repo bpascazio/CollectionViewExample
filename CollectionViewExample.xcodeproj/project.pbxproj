@@ -12,6 +12,7 @@
 		C1D1476D1BE03D5900CEF155 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1D1476B1BE03D5900CEF155 /* Main.storyboard */; };
 		C1D1476F1BE03D5900CEF155 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1D1476E1BE03D5900CEF155 /* Assets.xcassets */; };
 		C1D147721BE03D5900CEF155 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1D147701BE03D5900CEF155 /* LaunchScreen.storyboard */; };
+		C1D1477A1BE0404600CEF155 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D147791BE0404600CEF155 /* CollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		C1D1476E1BE03D5900CEF155 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1D147711BE03D5900CEF155 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1D147731BE03D5900CEF155 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1D147791BE0404600CEF155 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				C1D147671BE03D5900CEF155 /* AppDelegate.swift */,
 				C1D147691BE03D5900CEF155 /* ViewController.swift */,
+				C1D147791BE0404600CEF155 /* CollectionViewCell.swift */,
 				C1D1476B1BE03D5900CEF155 /* Main.storyboard */,
 				C1D1476E1BE03D5900CEF155 /* Assets.xcassets */,
 				C1D147701BE03D5900CEF155 /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			files = (
 				C1D1476A1BE03D5900CEF155 /* ViewController.swift in Sources */,
 				C1D147681BE03D5900CEF155 /* AppDelegate.swift in Sources */,
+				C1D1477A1BE0404600CEF155 /* CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
