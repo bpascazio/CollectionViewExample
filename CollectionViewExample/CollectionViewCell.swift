@@ -9,7 +9,7 @@
 import UIKit
 
 @objc protocol CustomCollectionViewCellDelegate : NSObjectProtocol {
-    func starImageHit()
+    func starImageHit(price:Float)
     optional func blowUpiPhone()
 }
 
@@ -24,6 +24,8 @@ class CollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     var textLabel: UILabel!
     var imageView: UIImageView!
     var imageViewStar: UIImageView!
+    
+    var price: Float!
     
     override init(frame: CGRect) {
         
@@ -59,7 +61,7 @@ class CollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     func handleTap(recognizer: UITapGestureRecognizer) {
         print("tap")
         if let delegate_ = self.delegate {
-            delegate_.starImageHit()
+            delegate_.starImageHit(self.price)
         }
     }
     

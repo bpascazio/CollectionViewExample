@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -41,18 +41,46 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="14z-yc-zrc" userLabel="Overlay View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BUY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOG-Cw-7oL">
+                                        <rect key="frame" x="156" y="243" width="289" height="115"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="289" id="4KA-VI-BE1"/>
+                                            <constraint firstAttribute="height" constant="115" id="ZlD-C5-wDQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="96"/>
+                                        <color key="textColor" red="0.97172900880000002" green="0.97172900880000002" blue="0.97172900880000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="rOG-Cw-7oL" firstAttribute="centerY" secondItem="14z-yc-zrc" secondAttribute="centerY" id="Cbv-2j-b4W"/>
+                                    <constraint firstItem="rOG-Cw-7oL" firstAttribute="centerX" secondItem="14z-yc-zrc" secondAttribute="centerX" id="MCK-lP-IaI"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="14z-yc-zrc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0QI-FO-Mji"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Mqj-VG-8rm" secondAttribute="trailing" constant="10" id="0YZ-Yv-P7E"/>
+                            <constraint firstItem="14z-yc-zrc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4Do-Dv-yYG"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mqj-VG-8rm" secondAttribute="bottom" constant="10" id="Lda-dt-L69"/>
                             <constraint firstItem="Mqj-VG-8rm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="emn-cb-D7B"/>
+                            <constraint firstItem="14z-yc-zrc" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="nW9-4u-CKV"/>
                             <constraint firstItem="Mqj-VG-8rm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="x4X-AW-K56"/>
+                            <constraint firstItem="14z-yc-zrc" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="yEI-g9-ih2"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="Mqj-VG-8rm" id="lb7-Ja-ap4"/>
+                        <outlet property="overlayLabel" destination="rOG-Cw-7oL" id="fgs-pG-ysE"/>
+                        <outlet property="overlayView" destination="14z-yc-zrc" id="tjV-Nf-dJ1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

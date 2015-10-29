@@ -10,7 +10,13 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, CustomCollectionViewCellDelegate {
 
+    @IBOutlet weak var overlayView: UIView!
+    
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBOutlet weak var overlayLabel: UILabel!
+    
+    var purchaseCount:Float = 0.0
     
     override func viewDidLoad() {
         
@@ -23,7 +29,6 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         collectionView!.delegate = self
         collectionView!.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: "CollectionViewCell")
         collectionView!.backgroundColor = UIColor.blackColor()
-        self.view.addSubview(collectionView!)
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -40,7 +45,8 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionViewCell", forIndexPath: indexPath) as! CollectionViewCell
         cell.backgroundColor = UIColor.blackColor()
-        cell.textLabel?.text = "\(indexPath.section):\(indexPath.row)"
+        cell.textLabel?.text = "$\(indexPath.row).00"
+        cell.price = Float(indexPath.row)
         cell.imageView?.image = UIImage(named: "circle")
         cell.imageViewStar?.image = UIImage(named: "star")
         cell.delegate = self
@@ -55,8 +61,16 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     
     // MARK: CustomCollectionViewCellDelegate
     
-    func starImageHit() {
+    func starImageHit(price:Float) {
         print("star image hit in view controller")
+        self.purchaseCount = self.purchaseCount + price
+        self.overlayView.hidden = false
+        self.overlayView.alpha = 1.0
+        self.overlayLabel.text = "\(self.purchaseCount)"
+       UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+            self.overlayView.alpha = 0.0
+            self.view.layoutIfNeeded()
+        }, completion: nil)
     }
 
 }
